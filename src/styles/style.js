@@ -17,6 +17,10 @@ color: midnightblue;
     border-bottom: 2px solid brown;
     padding: 16px;
 }
+.flag {
+    max-width: 50px;
+    margin-left: 20px;
+}
     
 
 `;
