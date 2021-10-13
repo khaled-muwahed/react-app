@@ -1,5 +1,6 @@
 import react, { useState, useEffect } from "react";
 import RenderCities from "../components/cities";
+import { Spinner } from "../components/LoadingSpinner/Spinner";
 
 export function FetchData() {
   const [isLoading, setIsLoading] = useState(true);
@@ -15,7 +16,7 @@ export function FetchData() {
 
   return (
     <>
-      {isLoading && "loading"}
+      {isLoading && Spinner()}
 
       {!isLoading && (
         <div>
