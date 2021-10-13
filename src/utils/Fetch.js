@@ -1,13 +1,14 @@
 
 
 import react, { useState, useEffect } from 'react';
+import RenderCities from '../components/cities';
 
 export function FetchData() {
 
     const [isLoading, setIsLoading] = useState(true);
     const [resData, setResData] = useState({});
     useEffect(() => {
-      const data =  fetch(`https://api.openaq.org/v1/cities?country=GB`)
+      fetch(`https://api.openaq.org/v1/cities?country=GB`)
       .then(response => response.json())
       .then(response => {
      
@@ -29,15 +30,17 @@ export function FetchData() {
       {isLoading && "loading"}
       
       { !isLoading &&
-      <>
-     
+      <div>
+
   
-      <div>{resData.map(cities => {
-        return(  cities.name)
+      <div
+       >{resData.map(cities => {
+        return(<RenderCities cityData = {cities} />);
+
       
       })}</div>
         
-        </>
+        </div>
       }
   </>
   
